@@ -54,7 +54,7 @@ public class HoneycombUtil extends GingerbreadUtil {
         	a.setTheme(android.R.style.Theme_Holo);
         }
         ActionBar bar = a.getActionBar();
-        if (bar != null) {
+                if (bar != null) {
             bar.setDisplayHomeAsUpEnabled(true);
         }
     }

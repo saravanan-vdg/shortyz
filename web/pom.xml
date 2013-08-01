@@ -54,12 +54,7 @@
     </pluginRepositories>
     <dependencies>
        
-        <dependency>
-            <groupId>com.google.appengine</groupId>
-            <artifactId>geronimo-jpa_3.0_spec</artifactId>
-            <version>1.1.1</version>
-            <scope>compile</scope>
-        </dependency>
+        
 
         <dependency>
             <groupId>junit</groupId>
@@ -148,6 +143,13 @@
             <version>1.0</version>
             <type>jar</type>
             <scope>provided</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>geronimo-jpa_3.0_spec</artifactId>
+            <version>1.1.1</version>
+            <scope>compile</scope>
         </dependency>
 
         <dependency>

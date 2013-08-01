@@ -39,10 +39,21 @@ public interface AndroidVersionUtils {
 			}
 			System.out.println("Creating utils for version: "
 					+ android.os.Build.VERSION.SDK_INT);
+			
 
 			try {
+				if(android.os.Build.VERSION.SDK_INT > 16){
+					return INSTANCE = (AndroidVersionUtils) Class.forName(
+							"com.totsp.crossword.versions.JellyBeanUtil")
+							.newInstance();
+				}
 				switch (android.os.Build.VERSION.SDK_INT) {
-				case 11:
+				case 10:
+				case 9:
+					System.out.println("Using Gingerbread.");
+					return INSTANCE = (AndroidVersionUtils) Class.forName(
+							"com.totsp.crossword.versions.GingerbreadUtil")
+							.newInstance();
 				case 12:
 				case 13:
 				case 14:
@@ -51,18 +62,6 @@ public interface AndroidVersionUtils {
 					return INSTANCE = (AndroidVersionUtils) Class.forName(
 							"com.totsp.crossword.versions.HoneycombUtil")
 							.newInstance();
-				case 16:
-				case 17:
-					return INSTANCE = (AndroidVersionUtils) Class.forName(
-							"com.totsp.crossword.versions.JellyBeanUtil")
-							.newInstance();
-				case 10:
-				case 9:
-					System.out.println("Using Gingerbread.");
-					return INSTANCE = (AndroidVersionUtils) Class.forName(
-							"com.totsp.crossword.versions.GingerbreadUtil")
-							.newInstance();
-
 				default:
 					return INSTANCE = new DefaultUtil();
 				}
